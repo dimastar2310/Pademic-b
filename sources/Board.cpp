@@ -42,7 +42,7 @@ bool Board::cure_exist(Color c) {
     if(p!=d){
         return  true;
     }
-    else
+    else //p==d
     {
         return false;
     }

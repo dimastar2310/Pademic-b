@@ -6,8 +6,8 @@ Player& FieldDoctor::treat(City c){
     if(_c == c){
         throw out_of_range("city ="+city_to_string.at(c)+"is same city");
     }
-    if(neighbors.at(_c).find(c)!=neighbors.at(_c).end()) { //we need them to be neighbos
-    throw out_of_range("curr city = "+city_to_string.at(c)+"other city"+city_to_string.at(_c)+"not connected");
+    if(neighbors.at(_c).find(c)==neighbors.at(_c).end()) { //we need them to be neighbos
+    throw out_of_range("curr city = "+city_to_string.at(_c)+"other city"+city_to_string.at(_c)+"not connected");
     }
 
 

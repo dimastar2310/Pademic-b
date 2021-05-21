@@ -5,8 +5,10 @@ namespace pandemic {
 
     class Researcher : public Player {
     public:
-        Researcher(Board b, City c) : Player(b, c, "Researcher") {}
+        Researcher(Board& b, City c) : Player(b, c) {
+            _role = "Researcher";
+        }
 
-        Player& discover_cure(Color c);
+        Player& discover_cure(Color c) override;
     };
 }

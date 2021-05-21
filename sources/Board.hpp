@@ -159,7 +159,7 @@ namespace pandemic{
             { City::London, {City::NewYork, City::Madrid, City::Essen, City::Paris } },
             { City::LosAngeles, {City::SanFrancisco, City::Chicago, City::MexicoCity, City::Sydney } },
             { City::Madrid, {City::London, City::NewYork, City::Paris, City::SaoPaulo, City::Algiers } },
-            { City::Manila, {City::Taipei, City::SanFrancisco, City::HoChiMinhCity, City::Sydney } },
+            { City::Manila, {City::Taipei, City::SanFrancisco, City::HoChiMinhCity, City::Sydney,City::HongKong } },
             { City::MexicoCity, {City::LosAngeles, City::Chicago, City::Miami, City::Lima, City::Bogota } },
             { City::Miami, {City::Atlanta, City::MexicoCity, City::Washington, City::Bogota } },
             { City::Milan, {City::Essen, City::Paris, City::Istanbul } },

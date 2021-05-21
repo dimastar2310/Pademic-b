@@ -65,10 +65,10 @@ Player& Player::fly_shuttle(City c){ //if in the current station ther is station
     }
     //if in current city there is research station we might fly to everyvere where we have research station
     auto k = _b.is_research_station(c);//im esh bair hanohahit tahanat mihkar,haim gam be shnia
-    cout<<k<<endl;
+    
     //auto d = _b.is_research_stations.end();
     auto kk = _b.is_research_station(_c); //by this functions we can acces private members to
-    cout<<kk<<endl;
+    
     //this city and other city has tahanat mihkar
     if(k && kk){ //k = true ,kk=false if(k==false or kk==false)
         //"ok you have research station but where you trying to fly dont"
@@ -133,7 +133,7 @@ Player& Player::discover_cure(Color c){ //finding cure for some color of deaseas
             //i assueme that temp<cards
             auto p = cards.begin(); //pointing to start of p
             auto l = cards.end();
-            //we will find the value in cards and ersase it
+            //we will find the value in cards and ersase it from original
                 for(auto k = temp.begin();k!=temp.end();k++){
                     p=cards.find(*k); // we searching in original cards
 
@@ -156,20 +156,18 @@ Player& Player::treat(City c){
     if(_c!=c){
         throw out_of_range("you are not in that city that you want to cure,first you need to go there");
     }
+    if(_b[c]==0){ //you are in same city ok
+        throw out_of_range("you"+role()+"trying to treat healthy city"+city_to_string.at(c));
+    }
         //now if the cure is found we setting board[city]=0
-    else if(_b.cure_exist(colors_of_cities.at(c))){ // we referencing to colors_of_cities<City,colour> that in board.hpp
+     if(_b.cure_exist(colors_of_cities.at(c))){ // we referencing to colors_of_cities<City,colour> that in board.hpp
         _b[c] = 0;
     }
-    else if(_b[c]>0){
+    else {//if(_b[c]>0){
         _b[c]--;
     }
-    else if(_b[c]==0){
-        throw out_of_range("there is 0 zero desease in this city");
-    }
-    else
-    {
-        throw out_of_range("this city has 0 cubes in it");
-    }
+    
+    
     return *this;
 }
 //if we taking card that already exist in hands of player nothing happens
